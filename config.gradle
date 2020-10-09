@@ -1,24 +1,16 @@
-/**
- *  全局统一配置文件
- *  在工程build应用
- */
 ext {
-    //版本号
     versions = [
-            // 应用配置
-            applicationId          : "com.jjzt.futures",       //应用ID
-            versionCode            : 3000,                     //版本号
-            versionName            : "3.0.0",                  //版本名称
-            libVersionCode         : 100,                      //基库版本号
-            libVersionName         : "1.0.0",                  //基库版本名称
+            applicationId          : "com.jjzt.futures",
+            versionCode            : 3000,
+            versionName            : "3.0.0",
+            libVersionCode         : 100,
+            libVersionName         : "1.0.0",
 
-            // 构建工具配置
             compileSdkVersion      : 29,
             buildToolsVersion      : "29.0.2",
             minSdkVersion          : 21,
             targetSdkVersion       : 29,
 
-            // 工具包配置
             constraintLayoutVersion: "2.0.2",
             junitVersion           : "4.13",
             junitTestVersion       : "1.1.2",
@@ -26,24 +18,19 @@ ext {
             appcompatVersion       : "1.2.0",
             multidexVersion        : "2.0.1",
 
-            // 三方依赖配置
             eventbusVersion        : "3.2.0",
-            glideVersion           : "4.11.0",
+            glideVersion           : "4.11.0"
 
     ]
     dependencies = [
-            // 工具包
             "constraint_layout"       : "androidx.constraintlayout:constraintlayout:${versions["constraintLayoutVersion"]}",
             "junit"                   : "junit:junit:${versions["junitVersion"]}",
             "junitTest"               : "androidx.test.ext:junit:${versions["junitTestVersion"]}",
             "espresso_core"           : "androidx.test.espresso:espresso-core:${versions["espressoVersion"]}",
             "appcompat"               : "androidx.appcompat:appcompat:${versions["appcompatVersion"]}",
-            //方法数超过65535解决方法64K MultiDex分包方法
             "multidex"                : "androidx.multidex:multidex:${versions["multidexVersion"]}",
 
-            //事件订阅
             "eventbus"                : "org.greenrobot:eventbus:${versions["eventbusVersion"]}",
-            //图片加载
             "glide"                   : "com.github.bumptech.glide:glide:${versions["glideVersion"]}",
             "glideAnnotationProcessor": "com.github.bumptech.glide:compiler:${versions["glideVersion"]}"
 
