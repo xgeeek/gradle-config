@@ -1,38 +1,78 @@
+/**
+ *  全局统一配置文件
+ *  在工程build应用
+ *  apply from: "config.gradle"
+ */
 ext {
+    //版本号
     versions = [
-            applicationId          : "com.jjzt.futures",
-            versionCode            : 3000,
-            versionName            : "3.0.0",
-            libVersionCode         : 100,
-            libVersionName         : "1.0.0",
+            applicationId           : "com.company.hzyoudai.ziyue",        //应用ID
+            versionCode             : 100,                    //版本号
+            versionName             : "1.0.0",              //版本名称
+            libVersionCode          : 1,                    //基库版本号
+            libVersionName          : "1.0.0",              //基库版本名称
 
-            compileSdkVersion      : 29,
-            buildToolsVersion      : "29.0.2",
-            minSdkVersion          : 21,
-            targetSdkVersion       : 29,
+            compileSdkVersion       : 28,
+            buildToolsVersion       : "28.0.3",
+            minSdkVersion           : 19,
+            targetSdkVersion        : 28,
 
-            constraintLayoutVersion: "2.0.2",
-            junitVersion           : "4.13",
-            junitTestVersion       : "1.1.2",
-            espressoVersion        : "3.3.0",
-            appcompatVersion       : "1.2.0",
-            multidexVersion        : "2.0.1",
+            androidSupportSdkVersion: "28.0.0",
+            constraintLayoutVersion : "1.1.3",
+            runnerVersion           : "1.0.1",
+            espressoVersion         : "3.0.1",
+            junitVersion            : "4.12",
+            annotationsVersion      : "24.0.0",
 
-            eventbusVersion        : "3.2.0",
-            glideVersion           : "4.11.0"
+            multidexVersion         : "1.0.2",
+            butterknifeVersion      : "9.0.0",
+            eventbusVersion         : "3.0.0",
+            immersionbarVersion     : "3.0.0",
+            glideVersion            : "4.8.0",
+            bannerVersion           : "2.1.4",
+            greendaoVersion         : "3.2.2",
+            pickerViewVersion       : "4.1.8",
+            javaxVersion            : "1.2",
+            lombokVersion           : "1.16.6",
 
     ]
     dependencies = [
-            "constraint_layout"       : "androidx.constraintlayout:constraintlayout:${versions["constraintLayoutVersion"]}",
-            "junit"                   : "junit:junit:${versions["junitVersion"]}",
-            "junitTest"               : "androidx.test.ext:junit:${versions["junitTestVersion"]}",
-            "espresso_core"           : "androidx.test.espresso:espresso-core:${versions["espressoVersion"]}",
-            "appcompat"               : "androidx.appcompat:appcompat:${versions["appcompatVersion"]}",
-            "multidex"                : "androidx.multidex:multidex:${versions["multidexVersion"]}",
+            // 工具包
+            "constraint_layout"      : "com.android.support.constraint:constraint-layout:${versions["constraintLayoutVersion"]}",
+            "runner"                 : "com.android.support.test:runner:${versions["runnerVersion"]}",
+            "espresso_core"          : "com.android.support.test.espresso:espresso-core:${versions["espressoVersion"]}",
+            "junit"                  : "junit:junit:${versions["junitVersion"]}",
+            "support_annotations"    : "com.android.support:support-annotations:${versions["annotationsVersion"]}",
 
-            "eventbus"                : "org.greenrobot:eventbus:${versions["eventbusVersion"]}",
-            "glide"                   : "com.github.bumptech.glide:glide:${versions["glideVersion"]}",
-            "glideAnnotationProcessor": "com.github.bumptech.glide:compiler:${versions["glideVersion"]}"
+            // support相关
+            "appcompat_v7"           : "com.android.support:appcompat-v7:${versions["androidSupportSdkVersion"]}",
+            "design"                 : "com.android.support:design:${versions["androidSupportSdkVersion"]}",
+            "support-v4"             : "com.android.support:support-v4:${versions["androidSupportSdkVersion"]}",
+            "cardview-v7"            : "com.android.support:cardview-v7:${versions["androidSupportSdkVersion"]}",
+            "recyclerview-v7"        : "com.android.support:recyclerview-v7:${versions["androidSupportSdkVersion"]}",
+
+            //方法数超过65535解决方法64K MultiDex分包方法
+            "multidex"               : "com.android.support:multidex:${versions["multidexVersion"]}",
+            //黄油刀
+            "butterknife_compiler"   : "com.jakewharton:butterknife-compiler:${versions["butterknifeVersion"]}",
+            "butterknife"            : "com.jakewharton:butterknife:${versions["butterknifeVersion"]}",
+            //事件订阅
+            "eventbus"               : "org.greenrobot:eventbus:${versions["eventbusVersion"]}",
+            //沉浸式状态栏
+            "immersionbar"           : "com.gyf.immersionbar:immersionbar:${versions["immersionbarVersion"]}",
+            "immersionbar_components": "com.gyf.immersionbar:immersionbar-components:${versions["immersionbarVersion"]}",
+            //banner
+            "banner"                 : "com.bigkoo:ConvenientBanner:${versions["bannerVersion"]}",
+            //图片加载
+            "glide"                  : "com.github.bumptech.glide:glide:${versions["glideVersion"]}",
+            //数据库
+            "greenDao"               : "org.greenrobot:greendao:${versions["greendaoVersion"]}",
+            //时间,地址,条件选择器
+            "pickerView"             : "com.contrarywind:Android-PickerView:${versions["pickerViewVersion"]}",
+            //lombok
+            "lombokJavax"            : "javax.annotation:javax.annotation-api:${versions["javaxVersion"]}",
+            "lombok"                 : "org.projectlombok:lombok:${versions["lombokVersion"]}",
+
 
     ]
 
